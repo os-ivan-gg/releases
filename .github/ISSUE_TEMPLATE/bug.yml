@@ -1,0 +1,57 @@
+name: Problem report
+description: Something doesn't work on the phone or during the install
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Don't post PINs, the phone's serial number or anything personal. If the install script
+        gave you a report ID (R-XXXX), put it below instead of pasting the log.
+  - type: input
+    id: build
+    attributes:
+      label: Build
+      description: Settings → About phone → Build number, or the release you installed
+      placeholder: "2026101520"
+    validations:
+      required: true
+  - type: dropdown
+    id: model
+    attributes:
+      label: Phone
+      options:
+        - Pixel 8 Pro (husky)
+        - Pixel 10a (stallion)
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options:
+        - Install (script or by hand)
+        - First setup
+        - Everyday profile
+        - Protected space
+        - PINs at the lock screen (dispatch, reboot, duress)
+        - Updates
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: computer
+    attributes:
+      label: Computer (install problems only)
+      placeholder: "macOS 15, Windows 11, Ubuntu 24.04 …"
+  - type: input
+    id: report
+    attributes:
+      label: Install report ID
+      placeholder: "R-7F3K"
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, step by step, what you expected and what you saw instead
+    validations:
+      required: true
